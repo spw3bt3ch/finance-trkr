@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block dashboard %}
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1>Finance Tracking Demo</h1>
+    <p>User will be redirected here from the <a href="/login" class="login-hype">login page</a> if login is successful</p>
+  </div>
+  <div class="metric-container">
+    <div class="income">
+      <div class="value">
+        <h2>0.00</h2>
+      </div>
+      <a href="#">Add Income</a>
+    </div>
+    <div class="expenses">
+      <div class="value">
+        <h2>0.00</h2>
+      </div>
+      <a href="#">Add Expenses</a>
+    </div>
+    <div class="savings">
+      <div class="value">
+        <h2>0.00</h2>
+      </div>
+      <a href="#">Add Savings</a>
+    </div>
+  </div>
+  <hr>
+  <div class="graph-container">
+    <h2>Metric Graph displays here...</h2>
+  </div>
+</div>
+{% endblock %}

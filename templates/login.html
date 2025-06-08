@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="loginpage-main-container">
+  <div id="featured-image" class="login-container">
+  </div>
+  <div id="login-form" class="login-container">
+    <h1>Start Tracking your finance now!</h1>
+    <form method="POST" action="/login">
+      <input type="text" id="username" name="username" placeholder="Username" required>
+      <br>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <br>
+      <input type="submit" value="Login" id="login-button">
+    </form>
+    <div class="form-footer">
+      <p>Don't have an account? <a href="/register">Register</a></p>
+      <p><a href="/forgot-password">Forgot Password?</a></p>
+    </div>
+  </div>
+</div>
+  
+{% endblock %}

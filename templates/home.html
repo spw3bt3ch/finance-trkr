@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block homePage %}
+<div class="main-container">
+  <div class="main-children first">
+    <div class="nav-overlay">
+      {% include 'navbar.html' %}
+    </div>
+    <div id="color-overlay">
+      <h1>Welcome to Finance Tracker</h1>
+      <p>Track your finances - Income, Expenditure, and Savings</p>
+      <a href="/register">Get Started</a>
+    </div>
+  </div>
+  <!-- <div class="main-children second"></div> -->
+</div>
+{% include 'footer.html' %}
+{% endblock %}

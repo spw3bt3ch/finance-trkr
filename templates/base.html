@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{titlename}}</title>
+  <link rel="stylesheet" href="static/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+{% block homePage %}
+
+  {% block navbar %}
+  {% include 'navbar.html' %}
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% block register %}
+  {% endblock %}
+
+  {% block passwordReset %}
+  {% endblock %}
+
+  {% block dashboard %}
+  {% endblock %}
+
+  {% block contact %}
+  {% endblock %}
+
+  {% block about %}
+  {% endblock %}
+
+  {% block footer %}
+  {% include 'footer.html' %} 
+  {% endblock %}
+
+{% endblock %}
+
+</body>
+</html>

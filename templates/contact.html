@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block contact %}
+<div class="contact-container">
+  <div class="contact-info-container">
+    <div class="contact-info">
+      <div class="contact-header">
+        <h1>Contact Us</h1>
+      </div>
+      <hr>
+      <h2>Office Address</h2>
+      <p>Block 25, Heathrow way<br>Heathrow, London.</p>
+      <p>info@financetracker.io</p>
+      <p>+445454434322</p>
+      <hr>
+      <div class="social-icons">
+        <a href="#"><img src="/static/linkedinwhite.png" alt="linkedin" title="LinkedIn"></a>
+        <a href="#"><img src="/static/instagramwhite.png" alt="instagram" title="Instagram"></a>
+        <a href="#"><img src="/static/facebookwhite.png" alt="facebook" title="Facebook"></a>
+        <a href="#"><img src="/static/youtubewhite.png" alt="youtube" title="YouTube"></a>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form-container">
+    <div class="contact-form">
+      <h2>Submit an Enquiry</h2>
+      <p>All fields are required for you to fill</p>
+      <form action="">
+        <input type="text" class="form-input" placeholder="Full Name">
+        <input type="email" class="form-input" placeholder="Email">
+        <input type="number" class="form-input" placeholder="Mobile Number">
+        <textarea name="message" class="form-input message-input" id="message" placeholder="Message..."></textarea>
+        <input type="button" class="form-input submit-button" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
