@@ -584,4 +584,17 @@ hr{
   .graph-container h2 {
     margin: 50px auto;
   }
+  .login-container h1{
+    width: 280px;
+  }
+  .registration-container form input{
+    width: 280px;
+    height: 35px;
+    margin-bottom: 12px;
+    border: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.532);
+    border-radius: 2px;
+    padding: 0px 10px;
+    font-size: 15px;
+  }
 }
