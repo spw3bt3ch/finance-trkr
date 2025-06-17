@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
+import sqlite3
 
 app = Flask(__name__)
 
@@ -16,11 +17,36 @@ def login():
     titlename = 'Login'
     )
 
-@app.route("/register")
+# def init_db():
+#   conn = sqlite3.connect('users.db')
+#   cur = conn.cursor()
+#   cur.execute()
+
+
+@app.route("/register", methods=['POST', 'GET'])
 def register():
+  if request.method == 'POST':
+    fullname = request.form['fullname']
+    email = request.form['email']
+    mobile = request.form['mobile']
+    username = request.form['username']
+    password = request.form['password']
+
+    conn = sqlite3.connect('users.db')
+    cur = conn.cursor()
+    cur.execute(f"""INSERT INTO registration (fullname, email_address, mobile_number, username, password) 
+                VALUES ('{fullname}', '{email}', {mobile}, '{username}', '{password}')
+""")
+
+    conn.commit()
+
+    return render_template('success.html')
+
   return render_template(
     'register.html', 
-    titlename = 'Register'
+    titlename = 'Register',
+    message = 'Check your email address provided to confirm your registration.',
+    # redirect_url = '/login'
     )
 
 @app.route("/forgot-password")
@@ -37,12 +63,28 @@ def dashboard():
     titlename = 'User Dashboard'
     )
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET', 'POST'])
 def contact():
-  return render_template(
-    'contact.html',
-    titlename = 'Contact Us'
-    )
+  if request.method == 'POST':
+    fullname = request.form['fullname']
+    email = request.form['email']
+    phone = request.form['phone']
+    message = request.form['message']
+
+    conn = sqlite3.connect('users.db')
+    cur = conn.cursor()
+    cur.execute(f"""INSERT INTO contact(fullname, email, phone, message)
+                  VALUES ('{fullname}', '{email}', {phone}, '{message}')
+""")
+    conn.commit()
+    return "Form successfully submitted! <a href='/contact'>Go back to Contact form</a>"
+  return render_template('contact.html', titlename = 'Contact Us')
+
+# def contact():
+#   return render_template(
+#     'contact.html',
+#     titlename = 'Contact Us'
+#     )
 
 @app.route("/about")
 def about():
@@ -50,7 +92,6 @@ def about():
     'about.html',
     titlename = 'About Us'
   )
-
 
 
 if __name__ == "__main__":
