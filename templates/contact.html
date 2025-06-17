@@ -25,12 +25,12 @@
     <div class="contact-form">
       <h2>Submit an Enquiry</h2>
       <p>All fields are required for you to fill</p>
-      <form action="">
-        <input type="text" class="form-input" placeholder="Full Name">
-        <input type="email" class="form-input" placeholder="Email">
-        <input type="number" class="form-input" placeholder="Mobile Number">
+      <form action="/contact" method="post">
+        <input type="text" class="form-input" placeholder="Full Name" name="fullname">
+        <input type="email" class="form-input" placeholder="Email" name="email">
+        <input type="number" class="form-input" placeholder="Mobile Number" name="phone">
         <textarea name="message" class="form-input message-input" id="message" placeholder="Message..."></textarea>
-        <input type="button" class="form-input submit-button" value="Submit">
+        <input type="submit" class="form-input submit-button" value="Submit">
       </form>
     </div>
   </div>

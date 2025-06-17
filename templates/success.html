@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block success %}
+<div class="success-container">
+    <div class="success-header">
+        <h3>Success!</h3>
+        <p>Your registration was completed successfully.</p>
+    </div>
+    <div class="success-content">
+        <p>{{ message }}</p>
+        <a href="/login" class="success-btn">Continue</a>
+    </div>
+{% endblock %}
